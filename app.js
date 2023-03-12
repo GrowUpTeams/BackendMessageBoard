@@ -5,7 +5,10 @@ app.use(express.json());
 
 app.use((req, res, next) => {
   // 设置允许跨域的域名， *代表允许任何域名跨域
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://react-message-board.vercel.app"
+  );
   // 允许的header类型
   res.header("Access-Control-Allow-Headers", "content-type");
   // 跨域允许的请求方式
