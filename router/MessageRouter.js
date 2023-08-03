@@ -35,6 +35,13 @@ router.post("/add", (req, res) => {
       }
     }
   );
+  // try {
+  //   // your code here
+  //   // throw new Error("添加失败");
+  //   res.status(200).send("Success!");
+  // } catch (err) {
+  //   res.status(400).send("Error: " + err.message);
+  // }
 });
 
 router.delete("/delete", (req, res) => {
