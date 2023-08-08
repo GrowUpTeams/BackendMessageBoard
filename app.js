@@ -4,7 +4,6 @@ const express = require("express");
 const path = require("path");
 const app = express();
 app.use(express.json());
-const https = require("node:https");
 
 app.use((req, res, next) => {
   // 设置允许跨域的域名， *代表允许任何域名跨域
