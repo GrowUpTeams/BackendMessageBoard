@@ -3,15 +3,31 @@ const { db } = require("../db/dbutils");
 var router = express.Router();
 
 router.get("/test", (req, res) => {
-  db.all("select * from `message`", [], (err, row) => {
-    res.send(row);
-  });
+  db.all(
+    "select * from `message` order by `create_time` desc",
+    [],
+    (err, row) => {
+      res.send(row);
+    }
+  );
 });
 
 router.get("/list", (req, res) => {
-  db.all("select * from `message`", [], (err, row) => {
-    res.send(row);
-  });
+  db.all(
+    "select * from `message` order by `create_time` desc",
+    [],
+    (err, row) => {
+      if (err === null) {
+        res.send(row);
+      } else {
+        res.send({
+          code: 500,
+          message: "获取失败",
+          error: err,
+        });
+      }
+    }
+  );
 });
 
 router.post("/add", (req, res) => {
